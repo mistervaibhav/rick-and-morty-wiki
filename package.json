@@ -12,7 +12,7 @@
     "@types/node": "^16.11.62",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
-    "graphql": "^16.6.0",
+    "graphql": "15.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
@@ -27,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "schema:download": "npx apollo service:download --endpoint=https://rickandmortyapi.com/graphql ./src/graphql/schema.json",
+    "schema:generate-watch": "npx apollo codegen:generate --localSchemaFile=./src/graphql/schema.json --target=typescript --tagName=gql --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +50,10 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26"
+    "@types/styled-components": "^5.1.26",
+    "apollo": "^2.34.0"
+  },
+  "resolutions": {
+    "graphql": "15.5.3"
   }
 }
